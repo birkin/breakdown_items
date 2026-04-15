@@ -1,0 +1,14 @@
+[project]
+name = 'breakdown-items'
+version = '0.0.0'
+description = 'Breaks down types of items in the BDR.'
+readme = 'README.md'
+requires-python = '>=3.12,<3.13'
+dependencies = [
+    'httpx~=0.28.0',
+]
+
+[dependency-groups]
+local = []
+staging = []
+prod = []
