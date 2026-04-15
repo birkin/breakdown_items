@@ -1,3 +1,14 @@
+"""
+Usage:
+    $ uv run main.py
+    ...or...
+    $ env LOG_LEVEL="DEBUG" uv run ./main.py
+
+Info:
+- the resource-type url: <https://repository.library.brown.edu/api/search/?q=-object_type%3Abdr-collection&rows=0&fl=pid&facet=true&facet.field=resource_type_ssi&facet.limit=10&facet.mincount=1>
+- the object-type url: <https://repository.library.brown.edu/api/search/?q=-object_type%3Abdr-collection&rows=0&fl=pid&facet=true&facet.field=object_type&facet.limit=10&facet.mincount=1>
+"""
+
 import argparse
 import logging
 import os
@@ -63,7 +74,7 @@ def build_request_url(api_url: str, params: dict[str, str | int]) -> str:
     """
     Builds a browser-ready GET URL from the API URL and request params.
 
-    Called by: fetch_search_payload()
+    Called by: fetch_search_payload(), but just for logging.
     """
     return str(httpx.URL(api_url).copy_merge_params(params))
 
